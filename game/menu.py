@@ -4,6 +4,17 @@ import random
 
 
 class Menu:
+    def load_image(self, folder, filename):
+        try:
+            path = os.path.join('assets', folder, filename)
+            image = pygame.image.load(path).convert_alpha()
+            return image
+        except:
+            surf = pygame.Surface((200, 60))
+            surf.fill((50, 50, 150))
+            pygame.draw.rect(surf, (100, 100, 200), surf.get_rect(), 5)
+            return surf
+
     def __init__(self, screen):
         self.screen = screen
         self.width, self.height = screen.get_size()
@@ -26,17 +37,6 @@ class Menu:
         # Opções do menu
         self.options = ["🚀 Iniciar Jogo", "🎮 Tutorial", "⭐ Créditos", "❌ Sair"]
         self.selected_option = 0
-
-    def load_image(self, folder, filename):
-        try:
-            path = os.path.join('assets', folder, filename)
-            image = pygame.image.load(path).convert_alpha()
-            return image
-        except:
-            surf = pygame.Surface((200, 60))
-            surf.fill((50, 50, 150))
-            pygame.draw.rect(surf, (100, 100, 200), surf.get_rect(), 5)
-            return surf
 
     def load_font(self, folder, filename, size):
         try:

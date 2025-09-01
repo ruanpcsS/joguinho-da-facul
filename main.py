@@ -17,7 +17,8 @@ class Game:
 
         # Ícone da janela
         try:
-            icon = pygame.image.load(os.path.join('assets', 'player', 'ship.png'))
+            icon = pygame.image.load(os.path.join('assets', 'images', 'player', 'ship.png'))
+
             pygame.display.set_icon(icon)
         except:
             pass
