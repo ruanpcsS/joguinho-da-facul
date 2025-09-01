@@ -20,6 +20,7 @@ class Game:
             icon = pygame.image.load(os.path.join('assets', 'images', 'player', 'ship.png'))
 
             pygame.display.set_icon(icon)
+
         except:
             pass
 
@@ -80,3 +81,4 @@ class Game:
 if __name__ == "__main__":
     game = Game()
     game.run()
+

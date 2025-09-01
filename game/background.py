@@ -37,7 +37,7 @@ class Background:
     def load_image(self, folder, filename):
         try:
             path = os.path.join('assets', folder, filename)
-            image = pygame.image.load(path).convert()
+            image = pygame.image.load(path).convert_alpha()
             # Redimensionar para caber na tela
             image = pygame.transform.scale(image, (self.width, self.height))
             return image
